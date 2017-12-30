@@ -1,7 +1,7 @@
 import express, { Router } from 'express';
 // Import index action from movies controller
 import { index } from './controllers/menus';
-import { index1,index2 } from './controllers/orders';
+import { index1,index2 ,index3} from './controllers/orders';
 
 // Initialize the router
 const router = Router();
@@ -15,6 +15,9 @@ router.route('/order')
 
   router.route('/order.json')
   .get(index2);
+
+router.route('/order/:orderId')
+.get(index3);
 
 export default router;
 
